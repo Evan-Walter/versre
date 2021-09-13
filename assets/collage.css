@@ -5,6 +5,7 @@
 @media screen and (max-width: 749px) {
   .collage-wrapper-title {
     margin-top: -1rem;
+    text-align: center;
   }
 }
 
@@ -16,6 +17,7 @@
 
 .collage-wrapper-title {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .collage {
