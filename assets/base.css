@@ -1819,11 +1819,11 @@ input[type="checkbox"] {
   padding-top: 1rem;
   padding-bottom: 1rem;
   /* sticky demo */
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
   background: white !important;
-  width: 100% !important;
+  width: 100% !important; */
 }
 
 @media screen and (min-width: 990px) {
