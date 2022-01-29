@@ -100,7 +100,7 @@
       'templates.contact.form.comment' | t
     }}</label>
   </div>
-  <div class="contact__button">
+  <div id="special-btn-id" class="contact__button">
     <button type="submit" class="button">
       {{ 'templates.contact.form.send' | t }}
     </button>
@@ -110,12 +110,24 @@
 
 <script>
   var nameEl = document.getElementById('ContactForm-name');
-  var nameVal;
+  var btnEl = document.getElementById('special-btn-id');
+  console.log(btnEl);
 
-  nameEl.addEventListener('change', (e) => {
-    nameVal = e.target.value;
-    console.log(nameVal);
-  });
+  function hideSubmitBtn(el, bListValue) {
+    el.addEventListener('change', (e) => {
+      if (e.target.value === bListValue) {
+        btnEl.style.display = "none";
+      }
+      console.log(value);
+      return value;
+    });
+  }
+
+  hideSubmitBtn(document.getElementById('ContactForm-name'), 'Voldemort');
+  hideSubmitBtn(document.getElementById('ContactForm-name'), 'Voldemort');
+  hideSubmitBtn(document.getElementById('ContactForm-name'), 'Voldemort');
+  hideSubmitBtn(document.getElementById('ContactForm-name'), 'Voldemort');
+
 </script>
 
 {% schema %} { "name": "t:sections.contact-form.name", "tag": "section",
