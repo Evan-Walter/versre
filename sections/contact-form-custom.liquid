@@ -112,18 +112,22 @@
 
 <script>
   var nameEl = document.getElementById('ContactForm-name');
-  var fields = document.getElementsByClassName('field');
+  var emailEl = document.getElementById('ContactForm-email');
+  var phoneEl = document.getElementById('ContactForm-phone');
   var btnEl = document.getElementById('special-btn-id');
-
-  for (field of fields) {
-    console.log(field.children);
-  }
-
-  function detectChange(el) {
+  
+  function hideSubmitBtn(el, bListValue) {
     el.addEventListener('change', (e) => {
-      return e.target.value;
+      if (e.target.value === bListValue) {
+        btnEl.style.display = "none";
+      }
     });
   }
+
+  hideSubmitBtn(nameEl, 'Lord Voldemort');
+  hideSubmitBtn(emailEl, 'lv@gmail.com');
+  hideSubmitBtn(phoneEl, '1234567890');
+  
 </script>
 
 {% schema %} { "name": "t:sections.contact-form.name", "tag": "section",
