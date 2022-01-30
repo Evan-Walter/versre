@@ -115,11 +115,11 @@
   var emailEl = document.getElementById('ContactForm-email');
   var phoneEl = document.getElementById('ContactForm-phone');
   var btnEl = document.getElementById('special-btn-id');
-  
+
   function hideSubmitBtn(el, bListValue) {
     el.addEventListener('change', (e) => {
       if (e.target.value === bListValue) {
-        btnEl.style.display = "none";
+        btnEl.style.display = 'none';
       }
     });
   }
@@ -127,7 +127,6 @@
   hideSubmitBtn(nameEl, 'Lord Voldemort');
   hideSubmitBtn(emailEl, 'lv@gmail.com');
   hideSubmitBtn(phoneEl, '1234567890');
-  
 </script>
 
 {% schema %} { "name": "t:sections.contact-form.name", "tag": "section",
