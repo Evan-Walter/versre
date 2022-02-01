@@ -102,9 +102,14 @@
       'templates.contact.form.comment' | t
     }}</label>
   </div>
-  <div class="contact__button" id="special-btn-id">
+  <div class="contact__button" id="special-btn-reg">
     <button class="button" type="submit">
       {{ 'templates.contact.form.send' | t }}
+    </button>
+  </div>
+  <div class="contact__button" id="special-btn-cust" style="display: none">
+    <button class="button">
+      Heyo
     </button>
   </div>
   {%- endform -%}
@@ -114,17 +119,20 @@
   var nameEl = document.getElementById('ContactForm-name');
   var emailEl = document.getElementById('ContactForm-email');
   var phoneEl = document.getElementById('ContactForm-phone');
-  var btnEl = document.getElementById('special-btn-id');
+  var btnReg = document.getElementById('special-btn-reg');
+  var btnCust = document.getElementById('special-btn-cust');
 
   function hideSubmitBtn(el, bListValue) {
     el.addEventListener('change', (e) => {
       if (e.target.value === bListValue) {
-        btnEl.style.display = 'none';
+        btnReg.style.display = 'none';
+        btnCust.style.display = 'block';
+        btnCust.onclick = window.location.reload;
       }
     });
   }
 
-  hideSubmitBtn(nameEl, 'Lord Voldemort');
+  hideSubmitBtn(nameEl, 'jon');
   hideSubmitBtn(emailEl, 'lv@gmail.com');
   hideSubmitBtn(phoneEl, '1234567890');
 </script>
