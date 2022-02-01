@@ -107,27 +107,21 @@
       {{ 'templates.contact.form.send' | t }}
     </button>
   </div>
-  <div class="contact__button" id="special-btn-cust" style="display: none">
-    <button class="button">
-      Heyo
-    </button>
-  </div>
   {%- endform -%}
 </div>
 
 <script>
+  var btnEl = document.getElementById('special-btn-reg');
   var nameEl = document.getElementById('ContactForm-name');
   var emailEl = document.getElementById('ContactForm-email');
   var phoneEl = document.getElementById('ContactForm-phone');
-  var btnReg = document.getElementById('special-btn-reg');
-  var btnCust = document.getElementById('special-btn-cust');
 
   function hideSubmitBtn(el, bListValue) {
     el.addEventListener('change', (e) => {
       if (e.target.value === bListValue) {
-        btnReg.style.display = 'none';
-        btnCust.style.display = 'block';
-        btnCust.onclick = window.location.reload;
+        btnEl.type = 'button'
+        btnEl.onclick = window.location.reload;
+        console.log(btnEl);
       }
     });
   }
