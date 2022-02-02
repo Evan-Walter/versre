@@ -103,7 +103,7 @@
     }}</label>
   </div>
   <div class="contact__button" id="special-btn-reg">
-    <button class="button" type="submit">
+    <button class="button">
       {{ 'templates.contact.form.send' | t }}
     </button>
   </div>
@@ -119,9 +119,14 @@
   function hideSubmitBtn(el, bListValue) {
     el.addEventListener('change', (e) => {
       if (e.target.value === bListValue) {
-        btnEl.type = 'button'
+        btnEl.type = 'reset';
         btnEl.onclick = window.location.reload;
         console.log(btnEl);
+        console.log(btnEl.type);
+      } else {
+        btnEl.type = 'submit';
+        console.log(btnEl);
+        console.log(btnEl.type);
       }
     });
   }
